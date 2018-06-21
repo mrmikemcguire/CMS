@@ -9,6 +9,8 @@ import * as firebase from 'firebase/app';
 import { User } from './user';
 import { switchMap } from 'rxjs/operators';
 
+// version test
+
 @Injectable()
 export class AfService {
   user$: Observable<User>;
