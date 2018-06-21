@@ -4,13 +4,10 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
-// import { of } from 'rxjs';
 import 'rxjs/add/observable/of';
 import * as firebase from 'firebase/app';
 import { User } from './user';
 import { switchMap } from 'rxjs/operators';
-
-// version test
 
 @Injectable()
 export class AfService {
