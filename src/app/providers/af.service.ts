@@ -16,13 +16,13 @@ export class AfService {
   user$: Observable<User>;
   constructor(public afAuth: AngularFireAuth,
               public afs: AngularFirestore) {
-    this.user$ = afAuth.authState.switchMap(user => {
+    this.user$ = afAuth.authState.pipe(switchMap(user => {
       if (user) {
         return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
       } else {
         return Observable.of(null);
       }
-    });
+    }));
   }
 
   loginWithGoogle() {
