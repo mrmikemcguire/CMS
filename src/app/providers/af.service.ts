@@ -29,6 +29,7 @@ export class AfService {
       this.updateUser(credential.user);
     });
   }
+
   updateUser(user) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     const data: User = {
@@ -42,6 +43,7 @@ export class AfService {
     };
     return userRef.set(data, {merge: true});
   }
+  
   logout() {
     this.afAuth.auth.signOut();
   }
